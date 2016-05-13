@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>CLID:</strong>
+  <%= @request.clid %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @request.gender %>
+</p>
+
+<p>
+  <strong>Current Building:</strong>
+  <%=  %>
+</p>
+
+<p>
+  <strong>Current Room:</strong>
+  <%=  %>
+</p>
+
+<p>
+  <strong>Chosen Building:</strong>
+  <%= @request.building %>
+</p>
+
+<p>
+  <strong>Chosen Room:</strong>
+  <%= @request.room %>
+</p>
+
+<%= link_to 'Accept', accept_request_path(@request)  %> |
+<%= link_to 'Deny', deny_request_path(@request) %> |
+<%= link_to 'Back', requests_path %>

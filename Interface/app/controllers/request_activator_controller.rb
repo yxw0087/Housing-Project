@@ -1,0 +1,2 @@
+class RequestActivatorController < ApplicationController
+end

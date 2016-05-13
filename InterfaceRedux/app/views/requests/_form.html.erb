@@ -1,0 +1,31 @@
+<div class="row">
+	<div class="col-mid-2">
+		<%= form_for(@request) do |f| %>
+		  <%= render 'shared/error_messages'%>
+		
+		  <div class="field">
+		    <%= f.label :clid %><br>
+		    <%= f.text_field :clid %>
+		  </div>
+		  <div class="field">
+		    <%= f.label :gender %><br>
+		    <%= f.label :gender, "Male", :value => "male" %>
+		    <%= f.radio_button :gender, "male"%> <br />
+		    <%= f.label :gender, "Female", :value => "female" %>
+		    <%= f.radio_button :gender, "female"%>
+		  </div>
+		  <div class="field">
+		    <%= f.label :building %><br>
+		    <%= f.select :building, options_for_select(%w(Conference\ Center Harris\ Hall Legacy\ Park Baker\ Hall Bonin\ Hall 
+		    	Coronna\ Hall Huger\ Hall)) %>
+		  </div>
+		  <div class="field">
+		    <%= f.label :room %><br>
+		    <%= f.text_field :room %>
+		  </div>
+		  <div class="actions">
+		    <%= f.submit "Send", class: "btn btn-primary" %>
+		  </div>
+		<% end %>
+	</div>
+</div>

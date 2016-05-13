@@ -1,0 +1,20 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+		<%= link_to "Housing", 'http://housing.louisiana.edu', id: "logo" %>
+		<div class="container">
+			<nav>
+				<ul class="nav navbar-nav pull-right">
+					<li class="divider"></li>
+					<% if logged_in? %>
+						<li><%= link_to 'Requests', requests_path%></li>
+						<li><%= link_to "Create Admin", createadmin_path%></li>
+						<li><%= link_to "Log Out", adminlogout_path, method: "delete" %></li>
+					<% else%>
+						<li><%= link_to "Submit Request",submit_path%></li>
+						<li><%= link_to "Log In", adminlogin_path%></li>
+					<% end%>
+					<li><%= link_to "Help",tohelp_path %></li>
+				</ul>
+			</nav>
+		</div>
+		
+	</header>

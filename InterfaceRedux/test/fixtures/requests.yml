@@ -1,0 +1,18 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  clid: abd1234
+  gender: male
+  building: Conference Center
+  room: 100
+  activated: true
+  activated_at: <%= Time.zone.now %>
+
+
+two:
+  clid: abe1234
+  gender: female
+  building: Conference Center
+  room: 140
+  activated: true
+  activated_at: <%= Time.zone.now %>

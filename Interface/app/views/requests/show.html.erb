@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Clid:</strong>
+  <%= @request.clid %>
+</p>
+
+<p>
+  <strong>Building:</strong>
+  <%= @request.building %>
+</p>
+
+<p>
+  <strong>Room:</strong>
+  <%= @request.room %>
+</p>
+
+<%= link_to 'Edit', edit_request_path(@request) %> |
+<%= link_to 'Back', requests_path %>

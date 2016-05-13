@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Queue</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Clid</th>
+      <th>Building</th>
+      <th>Room</th>
+      <th colspan="6"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @requests.each do |request| %>
+      <tr>
+        <td><%= request.clid %></td>  
+        <td><%= request.building %></td>   
+        <td><%= request.room %></td>
+        <td><%= link_to 'Accept', request, method: :delete, data: { confirm: 'Accept this request?' } %></td>
+        <td><%= link_to 'Deny', request, method: :delete, data: {confirm: 'Deny this request?'} %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+

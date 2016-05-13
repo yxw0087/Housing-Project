@@ -1,0 +1,9 @@
+<h1>Room Change Notice</h1>
+
+<p>Hello <%= @request.clid%>,</p>
+
+<p>This email is to inform you about a room change request made using your CLID.</p>
+
+<p>The requested building and/or room are the <%=@request.building%> <%=@request.room%>. Click below to confirm:</p>
+
+<%= link_to 'Confirm',edit_account_activation_url(@request.activation_token, clid: @request.clid)%>

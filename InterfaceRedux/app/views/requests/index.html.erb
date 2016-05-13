@@ -1,0 +1,45 @@
+<% provide(:title,"Request Queue")%>
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Requests</h1>
+
+<table style="width: 100%">
+  <thead>
+    <tr>
+      <th>CLID</th>
+      <th>Gender</th>
+      <th>Current Building</th>
+      <th>Current Room</th>
+      <th>Requested Building</th>
+      <th>Requested Room</th>
+      <th colspan="20"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @requests.each do |request| %>
+		<% if request.activated? %>
+			<%= @student = Student.find_by(clid: request.clid)%>
+			<tr>
+	        <td><%= request.clid %></td>
+	        <td><%= request.gender %></td>
+	        <% if !@student.nil? %>
+	        	<td><%= @student.building%></td>
+	        	<td><%= @student.roomid %></td>
+	        <!-- If student is nil, display nothing to avoid errors. -->
+	        <%else %>
+	        	<td></td>
+	        	<td></td>
+	        <%end%>
+	        <td><%= request.building %></td>
+	        <td><%= request.room %></td>
+	        <td><%= link_to 'Accept', deciderequest_path(request, :accept => true, :id => request.id)  %></td>
+			<td><%= link_to 'Deny', deciderequest_path(request, :accept => false, :id => request.id) %></td>
+	      </tr>      
+	      <%end %>
+    <% end %>
+  </tbody>
+</table>
+<%= will_paginate %>
+<br>
+<%= link_to 'New Administrator', new_administrator_path,class:"btn" %>

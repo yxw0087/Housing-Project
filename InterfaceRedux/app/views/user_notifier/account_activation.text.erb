@@ -1,0 +1,7 @@
+Hello <%= @request.clid%>,
+
+This email is to inform you about a room change request made using your CLID.
+
+The requested building and/or room are the <%=@request.building%> <%=@request.room%>. Copy the URL below to confirm:
+
+<%= edit_account_activation_url(@request.activation_token, clid: @request.clid)%>

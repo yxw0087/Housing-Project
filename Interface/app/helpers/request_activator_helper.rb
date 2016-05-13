@@ -1,0 +1,2 @@
+module RequestActivatorHelper
+end

@@ -1,0 +1,13 @@
+<h1>Notice</h1>
+
+<p>
+Hello <%= @request.clid %>,
+<br />
+A request has been made with your CLID to move into:
+<br />
+Building: <%= @request.building %> <br />
+Room: <%= @request.room %>
+<br /> <br />
+Confirm this request by selecting the following link:<br />
+<%= link_to 'Confirm', {:action => :sign_up}%>
+</p>
